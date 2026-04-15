@@ -1,6 +1,6 @@
 # backend-chat
 
-> En construcción — proyecto en desarrollo activo.
+> ##En construcción## — proyecto en desarrollo activo.
 
 Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MongoDB.
 
