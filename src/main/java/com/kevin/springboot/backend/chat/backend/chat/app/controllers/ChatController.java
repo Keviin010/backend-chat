@@ -5,7 +5,6 @@ import com.kevin.springboot.backend.chat.backend.chat.app.services.ChatMessageSe
 import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -18,7 +17,6 @@ import java.util.List;
 public class ChatController {
 
     private final ChatMessageService service;
-    private final SimpMessagingTemplate messagingTemplate;
 
     @MessageMapping("/sendMessage")
     @SendTo("/topic/chat")
