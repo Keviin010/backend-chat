@@ -20,6 +20,10 @@ Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MySQL.
 - Spring Data JPA
 - Lombok
 
+## Repositorio frontend
+
+[frontend-chat](https://github.com/Keviin010/frontend-chat) — Angular 21 + SockJS + StompJS
+
 ## Funcionalidades
 
 - [x] Configuración WebSocket + STOMP
@@ -28,7 +32,7 @@ Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MySQL.
 - [x] Indicador de "está escribiendo"
 - [x] Historial de mensajes con MySQL
 - [x] Frontend Angular conectado
-- [ ] Despliegue en producción
+
 
 ## Cómo ejecutar
 
