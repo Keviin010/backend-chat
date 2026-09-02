@@ -2,11 +2,11 @@
 
 > **En construcción** — proyecto en desarrollo activo.
 
-Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MySQL.
+Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y PostgreSQL.
 
 ![Java](https://img.shields.io/badge/Java-21-007396?style=flat&logo=java&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat&logo=springboot&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?style=flat&logo=mysql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![WebSocket](https://img.shields.io/badge/WebSocket-STOMP-000000?style=flat&logo=socketdotio&logoColor=white)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat&logo=apachemaven&logoColor=white)
 ![Lombok](https://img.shields.io/badge/Lombok-1.18-BC4521?style=flat&logo=lombok&logoColor=white)
@@ -16,7 +16,7 @@ Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MySQL.
 - Java 21
 - Spring Boot 3.5
 - WebSocket + STOMP
-- MySQL
+- PostgreSQL
 - Spring Data JPA
 - Lombok
 
@@ -34,9 +34,9 @@ Chat en tiempo real construido con Spring Boot, WebSocket, STOMP y MySQL.
 - [x] Frontend Angular conectado
 
 
-## Cómo ejecutar
+## Cómo ejecutar (local)
 
-1. Tener MySQL corriendo en `localhost:3306`
+1. Tener PostgreSQL corriendo en `localhost:5432`
 2. Crear la base de datos:
 
 ```sql
@@ -49,7 +49,16 @@ CREATE DATABASE chatdb;
 ./mvnw spring-boot:run
 ```
 
-El backend levanta en `http://localhost:8080`.
+El backend levanta en `http://localhost:8080`. Si tu usuario/contraseña de Postgres local no son `postgres`/`postgres`, exportá `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD` antes de correrlo.
+
+## Despliegue en Render
+
+1. Crear una base de datos PostgreSQL en Render (plan Free) y copiar su Internal Database URL, usuario y contraseña.
+2. Crear un Web Service apuntando a este repo:
+   - Build command: `./mvnw clean package -DskipTests`
+   - Start command: `java -jar target/backend-chat-0.0.1-SNAPSHOT.jar`
+3. Agregar las variables de entorno `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` y `SPRING_DATASOURCE_PASSWORD` con los datos del paso 1.
+4. Render define `PORT` automáticamente — la app ya está configurada para respetarla.
 
 ## Estado
 
