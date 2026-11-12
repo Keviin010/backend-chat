@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Data
 @AllArgsConstructor
@@ -23,7 +23,7 @@ public class ChatMessage {
     @Enumerated(EnumType.STRING)
     private MessageType type;
 
-    private LocalDateTime timestamp;
+    private Instant timestamp;
 
     public enum MessageType {
         CHAT, JOIN, LEAVE, TYPING

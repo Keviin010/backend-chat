@@ -5,6 +5,8 @@ import com.kevin.springboot.backend.chat.backend.chat.app.repositories.ChatMessa
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,7 +19,9 @@ public class ChatMessageService {
         return repository.save(message);
     }
 
-    public List<ChatMessage> findAll() {
-        return repository.findAll();
+    public List<ChatMessage> findLast() {
+        List<ChatMessage> messages = new ArrayList<>(repository.findTop50ByOrderByIdDesc());
+        Collections.reverse(messages);
+        return messages;
     }
 }
