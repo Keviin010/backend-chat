@@ -87,4 +87,4 @@ En el plan gratuito Render apaga el servicio tras 15 minutos sin visitas y tarda
 
 ## Autor
 
-Kevin Dair Royo Cuesta, estudiante de Tecnología en Desarrollo de Software, Universidad Católica Luis Amigó.
+Kevin Dair Royo Cuesta
